@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Layout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: "Space Mono", monospace;
+            color: white;
+        }
+
+        html {
+            background-color: #211f26;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .card {
+            border-radius: 5px;
+            padding: 20px;
+            width: 40%;
+
+            background-color: #2e2b36;
+        }
+
+        ul {
+            padding-left: 0;
+            display: inline-flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        h3 {
+            margin: 0;
+        }
+
+        h4 {
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+
+        .alt-description {
+            margin: 0;
+            font-size: 12px;
+            color: #cbbdf0;
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .footer-text {
+            margin: 16px;
+        }
+        
+        a {
+            margin: 0;
+            color: #a889fa;
+        }
+
+        a > p {
+            color: #a889fa;
+        }
+
+        h1 {
+            text-transform: uppercase;
+            font-size: 70px;
+            margin: 0;
+            margin-left: 50px;
+            color: white;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        header {
+            margin: 0;
+            background-color:#15151a;
+        }
+
+        .links {
+            display: inline-flex;
+        }
+
+        .card-title {
+            color: #e2d9fa;
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px; 
+        height: 12px; 
+        }
+      
+        ::-webkit-scrollbar-thumb {
+          background-color: #888; 
+          border-radius: 10px; 
+          border: 3px solid #f1f1f1; 
+        }
+      
+        ::-webkit-scrollbar-thumb:hover {
+          background-color: #555;
+        }
+        
+        ::-webkit-scrollbar-track {
+          background-color: #f1f1f1;
+        }
+      
+        ::-webkit-scrollbar-corner {
+          background-color: #f1f1f1;
+        }
+
+        @media (max-width: 680px) {
+            ul {
+                display: flex;
+            }
+
+            .card {
+                width: 90%;
+            }
+
+            h1 {
+                text-align: center;
+                margin: 0;
+                font-size: 50px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            footer {
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header><h1><span style="color: #a889fa;">Flex</span> Layout</h1></header>
+    
+    <h2>{ Properties }</h2>
+    <ul>
+        <li class="card">
+            <h3 class="card-title">display</h3>
+            <h4 class="main-description">Defines the container as a flex container or grid.</h4>
+            <p class="alt-description">Specifies flex container behavior, enabling flexbox layout for children.</p>
+        </li>
+
+        <li class="card">
+            <h3 class="card-title">flex-direction</h3>
+            <h4 class="main-description">Defines the direction of the flex items in the container.</h4>
+            <p class="alt-description">Determines whether items are arranged horizontally or vertically.</p>
+        </li>
+
+        <li class="card">
+            <h3 class="card-title">flex-wrap</h3>
+            <h4 class="main-description">Allows flex items to wrap onto multiple lines if necessary.</h4>
+            <p class="alt-description">Controls wrapping behavior of flex items in a container.</p>
+        </li>
+
+        <li class="card">
+            <h3 class="card-title">justify-content</h3>
+            <h4 class="main-description">Aligns flex items along the main axis (horizontal by default).</h4>
+            <p class="alt-description">Controls the alignment of items along the main axis.</p>
+        </li>
+
+        <li class="card">
+            <h3 class="card-title">align-items</h3>
+            <h4 class="main-description">Aligns flex items along the cross axis (vertical by default).</h4>
+            <p class="alt-description">Defines how items align relative to the container’s cross axis.</p>
+        </li>
+
+        <li class="card">
+            <h3 class="card-title">align-self</h3>
+            <h4 class="main-description">Allows individual flex items to override container's align-items.</h4>
+            <p class="alt-description">Enables a specific item to adjust its alignment independently.</p>
+        </li>
+
+        <li class="card">
+            <h3 class="card-title">flex-grow</h3>
+            <h4 class="main-description">Defines how much a flex item should grow relative to others.</h4>
+            <p class="alt-description">Determines the growth factor of items within the container.</p>
+        </li>
+
+        <li class="card">
+            <h3 class="card-title">flex-shrink</h3>
+            <h4 class="main-description">Defines how much a flex item should shrink relative to others.</h4>
+            <p class="alt-description">Controls how items shrink when container is smaller than items.</p>
+        </li>
+
+        <li class="card">
+            <h3 class="card-title">flex-basis</h3>
+            <h4 class="main-description">Specifies the initial size of a flex item before any growing or shrinking.</h4>
+            <p class="alt-description">Sets the initial size of items before space distribution.</p>
+        </li>
+
+        <li class="card">
+            <h3 class="card-title">flex</h3>
+            <h4 class="main-description">A shorthand for flex-grow, flex-shrink, and flex-basis properties.</h4>
+            <p class="alt-description">Combines grow, shrink, and basis into one convenient declaration.</p>
+        </li>
+
+        <li class="card">
+            <h3 class="card-title">order</h3>
+            <h4 class="main-description">Defines the order of flex items within the container.</h4>
+            <p class="alt-description">Alters the visual order of flex items within the layout.</p>
+        </li>
+
+        <li class="card">
+            <h3 class="card-title">align-content</h3>
+            <h4 class="main-description">Aligns flex lines when there is extra space in the cross axis.</h4>
+            <p class="alt-description">Distributes space between multiple flex lines across the container.</p>
+        </li>
+    </ul>
+
+    <footer>
+        <div class="links">
+            <a href="https://appbrewery.github.io/flexboxfroggy/#en"><p class="footer-text">flexboxfroggy</p></a>  
+            <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"><p class="footer-text">CSS Flexbox Layout Guide</p></a>  
+        </div>
+        
+        <p class="footer-text"><p>2024 Qewzdl Despayer</p>
+    </footer>
+</body>
+</html>
